@@ -1,9 +1,14 @@
+import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Home() {
+  const history = useHistory();
+  const handleClick = () => {
+    history.push("/userdetail");
+  }
   return (
     <div>
       <Navbar bg="primary" variant="dark">
@@ -12,11 +17,10 @@ function Home() {
           <Nav className="ml-auto">
             <Nav.Link
               style={{ fontSize: "27px" }}
-              as={Link}
-              to="/userdetail"
               active
+              onClick={handleClick}
             >
-              User
+              <p>User</p>
             </Nav.Link>
           </Nav>
         </Container>

@@ -1,4 +1,5 @@
 import { Card, Col } from "react-bootstrap";
+import React from "react";
 const CardItem = ({ id, name, username, email }) => {
   return (
     <Col className="d-flex">

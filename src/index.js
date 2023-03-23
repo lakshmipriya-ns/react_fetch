@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import reportWebVitals from "./reportWebVitals";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -11,10 +11,10 @@ import Home from "./components/Home";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
-    <Routes>
-      <Route exact path="/" element={<Home />}></Route>
-      <Route exact path="/userdetail" element={<App />}></Route>
-    </Routes>
+    <Switch>
+      <Route exact path="/" component={Home}></Route>
+      <Route exact path="/userdetail" component={App}></Route>
+    </Switch>
   </Router>
 );
 

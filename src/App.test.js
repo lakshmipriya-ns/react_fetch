@@ -1,8 +1,14 @@
-// import { render, screen } from '@testing-library/react';
-// import App from './App';
+import { render, screen } from '@testing-library/react';
+import React from 'react';
+import Home from './components/Home';
+import '@testing-library/jest-dom'
 
-// test('header renders with react testing tutorial in the document', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/This is React Testing Tutorial/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+describe('Home Test', () => {
+  test('header renders with welcome to home page', () => {
+    render(<Home />);
+    const linkElement = screen.getByText(/welcome to home page/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+})
+
+

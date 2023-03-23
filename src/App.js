@@ -1,4 +1,5 @@
 import "./App.css";
+import React from "react";
 import { useEffect, useState } from "react";
 import Axios from "axios";
 import CardItem from "./components/CardItem";
