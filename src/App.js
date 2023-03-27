@@ -1,15 +1,18 @@
-import "./App.css";
 import React from "react";
 import { useEffect, useState } from "react";
 import Axios from "axios";
 import CardItem from "./components/CardItem";
 import { Container, Row } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import { FaHome } from "react-icons/fa";
 
 function App() {
+  const history = useHistory();
+  const handleClick = () => {
+    history.push("/");
+  };
   const [list, setList] = useState([]);
   useEffect(() => {
     Axios({
@@ -25,8 +28,8 @@ function App() {
         <Container className="w-100 p-3">
           <Navbar.Brand href="#"></Navbar.Brand>
           <Nav className="ml-auto">
-            <Nav.Link as={Link} to="/" active>
-              <FaHome size={31}/>
+            <Nav.Link onClick={handleClick} active>
+              <FaHome size={31} />
             </Nav.Link>
           </Nav>
         </Container>
