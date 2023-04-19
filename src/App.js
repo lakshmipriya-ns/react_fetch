@@ -24,8 +24,8 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar bg="primary" variant="dark">
-        <Container className="w-100 p-3">
+      <Navbar data-testid="navbar" bg="primary" variant="dark" >
+        <Container data-testid ="containerNav" className="w-100 p-3">
           <Navbar.Brand href="#"></Navbar.Brand>
           <Nav className="ml-auto">
             <Nav.Link onClick={handleClick} active>
